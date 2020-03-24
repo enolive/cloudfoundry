@@ -28,3 +28,15 @@ jobs:
       working-directory: hello-express
       env:
         CI: true
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: d3sandoval/cloud-foundry-action@1.1.1
+        env: 
+          CF_TARGET_ORG: CCC
+          CF_TARGET_SPACE: rz2.0-lab
+          CF_USERNAME: ${{ secrets.CF_USERNAME }}
+          CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
+      - run: cf push
+  
