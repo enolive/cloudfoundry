@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -36,9 +36,9 @@ jobs:
       - uses: d3sandoval/cloud-foundry-action@1.1.1
         with:
           args: push -f hello-express/manifest.yml -p hello-express
-        env: 
+        env:
           CF_TARGET_ORG: CCC
           CF_TARGET_SPACE: rz2.0-lab
           CF_USERNAME: ${{ secrets.CF_USERNAME }}
           CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
-  
+
