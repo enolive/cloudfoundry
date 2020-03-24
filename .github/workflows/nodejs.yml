@@ -21,9 +21,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-      working-directory: hello-express
-    - run: npm run build --if-present
-    - run: npm test
+    - run: |
+        npm ci
+        npm run build --if-present
+        npm test
+    - working-directory: hello-express
       env:
         CI: true
