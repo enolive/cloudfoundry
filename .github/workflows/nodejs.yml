@@ -33,10 +33,11 @@ jobs:
     needs: [build]
     steps:
       - uses: d3sandoval/cloud-foundry-action@1.1.1
+        with:
+          args: push
         env: 
           CF_TARGET_ORG: CCC
           CF_TARGET_SPACE: rz2.0-lab
           CF_USERNAME: ${{ secrets.CF_USERNAME }}
           CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
-      - run: cf push
   
