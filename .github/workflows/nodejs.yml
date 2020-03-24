@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: d3sandoval/cloud-foundry-action@1.1.1
         with:
-          args: push -f manifest.yml
+          args: push -f hello-express/manifest.yml
         env: 
           CF_TARGET_ORG: CCC
           CF_TARGET_SPACE: rz2.0-lab
