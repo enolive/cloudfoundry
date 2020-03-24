@@ -1,11 +1,11 @@
-const express = require('express');
-const app = express();
+import express from "express";
 
-app.get('/', function (req, res) {
+export const app = express();
+
+app.get('/', (req, res) => {
   res.send('Hello No Pants!');
 });
 
 const port = process.env.PORT || 3000;
-console.log(`listening on port ${port}...`);
 
-app.listen(port);
+app.listen(port, () => console.log(`listening on port ${port}...`));

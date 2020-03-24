@@ -2,3 +2,4 @@ applications:
   - name: hello-express
     buildpacks:
       - nodejs_buildpack
+    command: npm start
