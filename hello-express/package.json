@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "babel server.js -d dist",
+    "build": "babel server.js routes.js -d dist",
     "start": "npm run build && node dist/server.js",
     "test": "jest"
   },
